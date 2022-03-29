@@ -26,7 +26,7 @@ function Item({ item }) {
 
                     <div className="d-flex justify-content-between mb-3">
                         <h5 className="mb-0">{item.title}</h5>
-                        <h5 className="text-dark mb-0">${item.price.toFixed(2)}</h5>
+                        <h5 className="fw-bold mb-0 text-danger">${item.price.toFixed(2)}</h5>
                     </div>
 
                     <div className="d-flex justify-content-between mb-2">
