@@ -1,12 +1,8 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import ItemCount from "./ItemCount";
 
 function Item({ item }) {
-    // Funcion provisional de callback
-    function myCallback(counter) {
-        console.log('Añadido al carrito ' + counter + ' items.');
-    }
-
     return (
         <div className="col-md-12 col-lg-4 mb-4 mb-lg-0">
             <div className="card">
@@ -32,7 +28,9 @@ function Item({ item }) {
                     <div className="d-flex justify-content-between mb-2">
                         <p className="text-muted mb-0">Stock: <span className="fw-bold">10</span></p>
                     </div>
-                    <ItemCount stock={10} initial={0} onAdd={myCallback}/>
+                    <Link to={`/item/${item.id}`} className="d-flex justify-content-center">
+                        <button type="button" className="btn btn-outline-primary">Ver detalles</button>
+                    </Link>
                 </div>
             </div>
         </div>
