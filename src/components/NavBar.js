@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                         <div className="collapse navbar-collapse ml-4" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                                    <NavLink to='/' activeclassname="active" className="nav-link">Inicio</NavLink>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

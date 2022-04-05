@@ -3,7 +3,7 @@ import data from "../data/data";
 const getItems = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(data);
-    }, 1000);
+    }, 2000);
 });
 
 export default getItems;

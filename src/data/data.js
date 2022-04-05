@@ -4,7 +4,8 @@ const data = [
         title: "MSI Ventus GeForce RTX 3050 8GB GDDR6",
         categoryId: 0,
         categoryName: "Tarjetas gráficas",
-        description: "",
+        description: "1777 MHz / 14 Gbps, 8GB GDDR6, DisplayPort x 3\n" +
+            "HDMI x 1, Supports multi-GPU setups",
         price: 249.99,
         pictureUrl: "https://i.imgur.com/e1dzWaJ.jpg"
     },
@@ -13,7 +14,7 @@ const data = [
         title: "MSI Ventus GeForce GTX 1650 4GB GDDR6",
         categoryId: 0,
         categoryName: "Tarjetas gráficas",
-        description: "",
+        description: "4GB GDDR6, 1620 MHz / 12 Gbps, A powerful photo mode that lets you take professional-grade photographs of your games",
         price: 231.39,
         pictureUrl: "https://i.imgur.com/dIL3Jn4.jpg"
     },
@@ -22,7 +23,7 @@ const data = [
         title: "Yeston GeForce GTX 1050 TI 4GB GDDR5",
         categoryId: 0,
         categoryName: "Tarjetas gráficas",
-        description: "",
+        description: "1291/1392MHz, 4G/128bit/GDDR5, Interfaz de salida: DVI-D + HDMI compatible + DP ",
         price: 259,
         pictureUrl: "https://i.imgur.com/l5mb29i.jpg"
     },
