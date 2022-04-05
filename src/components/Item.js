@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import ItemCount from "./ItemCount";
 
 function Item({ item }) {
     return (
-        <div className="col-md-12 col-lg-4 mb-4 mb-lg-0">
+        <div className="col-md-12 col-lg-4 mb-4">
             <div className="card">
                 <div className="d-flex justify-content-between p-3">
                     <p className="lead mb-0">Ofertas</p>
@@ -16,7 +15,7 @@ function Item({ item }) {
                 />
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
-                        <p className="small"><a href="#!" className="text-muted">Tarjetas gráficas</a></p>
+                        <p className="small"><a href="#" className="text-muted">Tarjetas gráficas</a></p>
                         <p className="small text-danger">ID: {item.id}</p>
                     </div>
 

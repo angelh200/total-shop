@@ -31,16 +31,13 @@ class NavBar extends React.Component {
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <NavLink to='/category/1' activeClassName="active" className="dropdown-item">Teclados</NavLink>
+                                            <NavLink to='/category/1' activeclassname="active" className="dropdown-item">Teclados</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to='/category/2' activeClassName="active" className="dropdown-item">Pantallas</NavLink>
+                                            <NavLink to='/category/2' activeclassname="active" className="dropdown-item">Mouse</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to='/category/3' activeClassName="active" className="dropdown-item">Mouse</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/category/4" activeClassName="active" className="dropdown-item">Tarjetas Gráficas</NavLink>
+                                            <NavLink to="/category/0" activeclassname="active" className="dropdown-item">Tarjetas Gráficas</NavLink>
                                         </li>
                                     </ul>
                                 </li>
