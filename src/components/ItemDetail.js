@@ -1,7 +1,16 @@
 import ItemCount from "./ItemCount";
-import React from "react";
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
+    const [isReady, setIsReady] = useState(false);
+
+    function onAdd(quantity) {
+        // Se recibe el evento que emite ItemCount
+        console.log('Se compro ', item.title, ' Cantidad: ', quantity);
+        setIsReady(true);
+    }
+
     return (
         <div className="row justify-content-start my-5">
             <div className="col-6">
@@ -16,7 +25,11 @@ const ItemDetail = ({ item }) => {
                 </ul>
                 <h5 className="fw-bold mb-4 text-danger text-start">${item.price.toFixed(2)}</h5>
                 <div className="text-center">
-                    <ItemCount stock={10} initial={0}/>
+                    {
+                        isReady
+                        ? <button className="btn btn-danger"><Link to="/cart">Terminar compra</Link></button>
+                        : <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+                    }
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
         getItems.then(items => {
             const selectItem = items.find(item => item.id == id);
             if(selectItem) {
-                setItem([<ItemDetail item={selectItem}/>]);
+                setItem([<ItemDetail key={item.id} item={selectItem}/>]);
             }
         });
     }, []);
