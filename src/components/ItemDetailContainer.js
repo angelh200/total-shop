@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
                 setItem([<ItemDetail key={item.id} item={selectItem}/>]);
             }
         });
-    }, []);
+    }, [id]);
 
     return (
         <div className="container">
