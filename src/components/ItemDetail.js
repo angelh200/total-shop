@@ -1,13 +1,15 @@
 import ItemCount from "./ItemCount";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {Link} from "react-router-dom";
+import {CartContext} from "../context/CartContext";
 
 const ItemDetail = ({ item }) => {
     const [isReady, setIsReady] = useState(false);
+    const {cart, addItem, removeItem, clear, isInCart} = useContext(CartContext);
 
     function onAdd(quantity) {
         // Se recibe el evento que emite ItemCount
-        console.log('Se compro ', item.title, ' Cantidad: ', quantity);
+        addItem(item, quantity);
         setIsReady(true);
     }
 
