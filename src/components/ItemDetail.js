@@ -19,11 +19,13 @@ const ItemDetail = ({ item }) => {
                 <img src={item.pictureUrl} className="img-fluid"/>
             </div>
             <div className="col-6 text-start">
-                <p className="small"><a href="#" className="text-muted">{item.categoryName}</a></p>
+                <p className="small">
+                    <Link to={`/category/${item.categoryId}`} className="text-muted">{item.categoryName}</Link>
+                </p>
                 <h2 className="mb-3">{item.title}</h2>
                 <p className="mb-1 fw-bold text-start">Descripción: </p>
                 <ul className="list-group">
-                    {item.description.split(',').map(el => <p className="list-group-item list-group-item-dark text-capitalize">{el.trim()}</p>)}
+                    {item.description.split(',').map(el => <p key={el} className="list-group-item list-group-item-dark text-capitalize">{el.trim()}</p>)}
                 </ul>
                 <h5 className="fw-bold mb-4 text-danger text-start">${item.price.toFixed(2)}</h5>
                 <div className="text-center">

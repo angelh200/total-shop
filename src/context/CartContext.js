@@ -1,6 +1,6 @@
 import {createContext, useState} from "react";
 
-const CartContext = createContext();
+const CartContext = createContext(false);
 
 function CartProvider({ defaultValue = [], children }) {
     const [cart, setCart] = useState(defaultValue);
@@ -17,13 +17,14 @@ function CartProvider({ defaultValue = [], children }) {
             });
         }
         setCart(newCart);
-        console.log('Se añadio al carrito ', newItem.title);
     }
 
     function removeItem(itemId) {
+        const newCart = cart.slice();
         if(isInCart(itemId)) {
             const itemIndex = cart.findIndex(item => item.id === itemId);
-            setCart(cart.splice(itemIndex, 1));
+            newCart.splice(itemIndex, 1);
+            setCart(newCart);
         }
     }
 
@@ -33,8 +34,7 @@ function CartProvider({ defaultValue = [], children }) {
 
     // Devuelve falso o el index donde encuentra el item
     function isInCart(itemId) {
-        const foundItem= cart.find(item => item.id === itemId);
-        return !!foundItem;
+        return cart.some(item => item.id === itemId);
     }
 
     return (

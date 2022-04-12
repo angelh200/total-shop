@@ -15,7 +15,7 @@ function Item({ item }) {
                 />
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
-                        <p className="small"><a href="#" className="text-muted">Tarjetas gráficas</a></p>
+                        <p className="small"><Link to={`/category/${item.categoryId}`} className="text-muted">{item.categoryName}</Link></p>
                         <p className="small text-danger">ID: {item.id}</p>
                     </div>
 

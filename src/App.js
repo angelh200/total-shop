@@ -23,7 +23,7 @@ const LINKS = [
                 url: ['/category/1']
             },
             {
-                name: 'Taretas gráficas',
+                name: 'Mouse',
                 url: ['/category/2']
             }
         ]
