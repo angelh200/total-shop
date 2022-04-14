@@ -1,17 +1,25 @@
 import React, {useEffect, useState} from "react";
 import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom";
-import getItems from "../helpers/getItems";
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        getItems.then(items => {
-            const selectItem = items.find(item => item.id == id);
-            if(selectItem) {
-                setItem([<ItemDetail item={selectItem}/>]);
+        const db = getFirestore();
+
+        const itemRef = doc(db, "items", id);
+        getDoc(itemRef).then((snapshot) => {
+            if(snapshot.exists()) {
+                const myItem = {
+                    id: snapshot.id,
+                    ...snapshot.data()
+                };
+
+                console.log(myItem);
+                setItem([<ItemDetail item={myItem} />]);
             }
         });
     }, [id]);

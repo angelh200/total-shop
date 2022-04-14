@@ -5,7 +5,7 @@ import {CartContext} from "../context/CartContext";
 
 const ItemDetail = ({ item }) => {
     const [isReady, setIsReady] = useState(false);
-    const {cart, addItem, removeItem, clear, isInCart} = useContext(CartContext);
+    const {addItem} = useContext(CartContext);
 
     function onAdd(quantity) {
         // Se recibe el evento que emite ItemCount
@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
     return (
         <div className="row justify-content-start my-5">
             <div className="col-6">
-                <img src={item.pictureUrl} className="img-fluid"/>
+                <img alt={item.title} src={item.pictureUrl} className="img-fluid"/>
             </div>
             <div className="col-6 text-start">
                 <p className="small">
@@ -32,7 +32,7 @@ const ItemDetail = ({ item }) => {
                     {
                         isReady
                         ? <button className="btn btn-danger"><Link to="/cart">Terminar compra</Link></button>
-                        : <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+                        : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
                     }
                 </div>
             </div>

@@ -16,6 +16,7 @@ const Cart = () => {
                         <div className="row align-items-center">
                             <div className="col-md-2">
                                 <img
+                                    alt="actual product"
                                     src={item.pictureUrl}
                                     className="img-fluid"/>
                             </div>

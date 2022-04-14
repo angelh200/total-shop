@@ -1,19 +1,25 @@
 import {useEffect, useState} from 'react';
 import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
-import getItems from "../helpers/getItems";
+import { collection, getDocs, getFirestore, where, limit, query} from "firebase/firestore";
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
-        getItems.then((items) => {
-            let filterItems = items;
-            if(id) {
-                filterItems = items.filter(item => item.categoryId == id);
-            }
-            setItems(filterItems);
+        const db = getFirestore();
+
+        let queryFilter = '';
+        if (id) {
+            queryFilter = query(collection(db, 'items'), where('categoryId', '==', Number(id)), limit(10));
+        } else {
+            queryFilter = query(collection(db, 'items'), limit(10));
+        }
+
+        getDocs(queryFilter).then((snapshot) => {
+            if(snapshot.size === 0) console.log('No hay resultados para la busqueda!');
+            setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
         });
     }, [id]);
 
