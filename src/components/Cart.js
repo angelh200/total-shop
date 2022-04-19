@@ -85,7 +85,7 @@ const Cart = () => {
                                 <div className="d-flex justify-content-end">
                                     <Link to='/' className="btn btn-light btn-lg me-2">Continuar Comprando</Link>
                                     <button onClick={() => clear()} type="button" className="btn btn-danger btn-l me-2">Vaciar Carrito</button>
-                                    <button type="button" className="btn btn-primary btn-lg">Terminar Compra</button>
+                                    <Link to='/checkout' type="button" className="btn btn-primary btn-lg">Terminar Compra</Link>
                                 </div>
                             </> :
                             <div className="card mb-5">

@@ -37,8 +37,14 @@ function CartProvider({ defaultValue = [], children }) {
         return cart.some(item => item.id === itemId);
     }
 
+    function cartTotal() {
+        return cart.reduce((prev, next) => {
+            return prev + next.price * next.quantity;
+        }, 0);
+    }
+
     return (
-        <CartContext.Provider value={{cart, addItem,  removeItem, clear, isInCart}}>
+        <CartContext.Provider value={{cart, addItem,  removeItem, clear, isInCart, cartTotal}}>
             {children}
         </CartContext.Provider>
     );

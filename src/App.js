@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import './App.css';
 import Cart from "./components/Cart";
 import {CartProvider} from "./context/CartContext";
+import Checkout from "./components/Checkout";
 
 const LINKS = [
     {
@@ -16,7 +17,7 @@ const LINKS = [
         url: [
             {
                 name: 'Tarjetas gráficas',
-                url: ['/category/0']
+                url: ['/category/0zz']
             },
             {
                 name: 'Teclados',
@@ -48,6 +49,7 @@ function App() {
               <Route exact path='/category/:id' element={<ItemListContainer/>} />
               <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
               <Route exact path='/cart' element={<Cart/>}/>
+              <Route exact path='/checkout' element={<Checkout/>}/>
           </Routes>
         </BrowserRouter>
       </CartProvider>
